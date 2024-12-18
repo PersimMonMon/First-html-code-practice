@@ -1,12 +1,18 @@
-<html>    <!-- tells browser the document is in html -->
+<!DOCTYPE html>  <!-- tells browser its html and render page -->
+
+<html lang="en">     <!-- tells browser the document is in html and lang is in English-->
+  <head>
+    <meta charset="utf-8">   <!-- tells browser to use utf-8 to allow wide range of different characters to be used -->
+    <title>CatPhotoApp</title>  <!-- appears in tab and for search engine -->
+  </head>
   <body>    <!-- contains all visible contents of the page -->
-    <main> <!-- primary content on page -->
-      <h1>CatPhotoApp</h1> <!-- main header, biggest font -->
-      <section>  <!-- way to group content -->
+    <main>   <!-- primary content on page -->
+      <h1>CatPhotoApp</h1>  <!-- main header, biggest font -->
+      <section>    <!-- way to group content -->
         <h2>Cat Photos</h2>
         <p>Everyone loves <a href="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg">cute cats</a> online!</p>
-        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>    <!-- p element groups content, while "a" element anchors to enable link click -->
-        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a> <!--links img -->
+        <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p>     <!-- p element groups content, while "a" element anchors to enable link click -->
+        <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
       </section>
       <section>
         <h2>Cat Lists</h2>
@@ -16,22 +22,44 @@
           <li>laser pointers</li>
           <li>lasagna</li>
         </ul>
-        <figure>  <!-- groups content, and allow figure caption with figcaption element -->
+        <figure>    <!-- groups content, and allow figure caption with figcaption element -->
           <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
           <figcaption>Cats <em>love</em> lasagna.</figcaption>
         </figure>
         <h3>Top 3 things cats hate:</h3>
-        <ol>
+        <ol>   <!-- ol is for ordered list -->
           <li>flea treatment</li>
           <li>thunder</li>
           <li>other cats</li>
         </ol>
         <figure>
-          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">  <!-- allow text in alt to display if src fails -->
+          <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">   <!-- allow text in alt to display if src fails -->
           <figcaption>Cats <strong>hate</strong> other cats.</figcaption>
         </figure>
       </section>
-
+      <section>
+        <h2>Cat Form</h2>
+        <form action="https://freecatphotoapp.com/submit-cat-photo">
+          <fieldset>   <!-- similar to figure element but for is for forms to enable captions with use of legend element -->
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+            <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>  <!-- checked attribute used to pick this input first, radio types are for multiple choice only one option -->
+            <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>  <!-- names are the same because they're part of the same group -->
+          </fieldset>
+          <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label>   <!-- we could put label element in front of entire line and remove for attribute -->
+            <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+            <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+          </fieldset>
+          <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
+    <footer>   <!-- usually placed outside of main -->
+      <p>
+        No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+      </p>
+    </footer>
   </body>
 </html>
